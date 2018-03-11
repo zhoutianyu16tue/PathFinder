@@ -42,3 +42,52 @@ def generate_rand_weighted_g(node_size=NUM_NODE, p=0.02, directed=True, weight_m
 def print_g(G):
     for edge in G.edges(data=True):
         print(edge)
+        
+def extract_path(prev, src, dst):
+    
+    path = []
+    u = dst
+
+    while prev[u] != -1:
+        path.insert(0, u)
+        u = prev[u]
+        
+    path.insert(0, src)
+    return path
+
+def my_dijkstra_path(G, src, dst=None):
+    
+    prev = [-1 for _ in range(G.number_of_nodes())]
+    distance = [float('Inf') for _ in range(G.number_of_nodes())]
+    distance[src] = 0
+    Q = {}
+    intermediate_paths = {}
+    
+    for node, dist in enumerate(distance):
+        Q[node] = dist
+        intermediate_paths[node] = []
+    
+    while len(Q) != 0:
+        
+        u = min(Q, key=Q.get)
+        del Q[u]
+        
+        for edge in G.edges(u):
+            
+            
+            v = edge[1]
+            new_dist = distance[u] + G.get_edge_data(u, v)['weight']
+            
+#             intermediate_paths[v] += 1
+            
+            if new_dist < distance[v]:
+                distance[v] = new_dist
+                Q[v] = new_dist
+                prev[v] = u
+                
+                # extract the tmp path for v here for analysis
+                # TODO
+                
+                intermediate_paths[v].append(extract_path(prev, src, v))
+                
+    return extract_path(prev, src, dst), intermediate_paths
