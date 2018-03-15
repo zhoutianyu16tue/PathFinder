@@ -2,3 +2,4 @@
 *.pyc
 *.params
 *.json
+*.pickle
