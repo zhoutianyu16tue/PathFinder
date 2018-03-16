@@ -5,13 +5,13 @@ import mxnet as mx
 import matplotlib.pyplot as plt
 from config import *
 
-def plot_g(G, with_labels=True):
+def plot_g(G, with_labels=True, node_size=300):
     
     pos = {}
     for t in G.nodes.items():
         pos[t[0]] = (t[1]['x'], t[1]['y'])
 
-    nx.draw(G, pos=pos, font_size=8, with_labels=with_labels)
+    nx.draw(G, pos=pos, node_size=node_size, font_size=8, with_labels=with_labels)
     plt.show()
 
 def generate_low_degree_g(node_size=20, min_out_degree=2, max_out_degree=4, weight_min=WEIGHT_MIN, weight_max=WEIGHT_MAX):
