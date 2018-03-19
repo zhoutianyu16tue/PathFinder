@@ -3,3 +3,4 @@
 *.params
 *.json
 *.pickle
+*.txt
