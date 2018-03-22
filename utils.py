@@ -3,7 +3,7 @@ import random
 import numpy as np
 import mxnet as mx
 import matplotlib.pyplot as plt
-from config import *
+
 
 def plot_g(G, with_labels=True, node_size=300, font_size=8):
     
@@ -14,7 +14,7 @@ def plot_g(G, with_labels=True, node_size=300, font_size=8):
     nx.draw(G, pos=pos, node_size=node_size, font_size=font_size, with_labels=with_labels)
     plt.show()
 
-def generate_low_degree_g(num_nodes=20, min_out_degree=2, max_out_degree=4, weight_min=WEIGHT_MIN, weight_max=WEIGHT_MAX):
+def generate_low_degree_g(num_nodes=20, min_out_degree=2, max_out_degree=4, weight_min=0.0, weight_max=1.0):
     
     G = nx.DiGraph()
     G.add_nodes_from(range(0, num_nodes))
@@ -35,7 +35,7 @@ def generate_low_degree_g(num_nodes=20, min_out_degree=2, max_out_degree=4, weig
         
     return G
 
-def generate_rand_weighted_g(node_size=NUM_NODE, p=0.02, directed=True, weight_min=WEIGHT_MIN, weight_max=WEIGHT_MAX):
+def generate_rand_weighted_g(node_size=20, p=0.02, directed=True, weight_min=0.0, weight_max=1.0):
 
     rnd_g = nx.erdos_renyi_graph(node_size, p, directed=directed)
 
