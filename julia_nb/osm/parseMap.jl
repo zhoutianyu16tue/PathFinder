@@ -85,6 +85,8 @@ function parse_tag(attr::OSMattributes, attrs_in::Dict{@compat(AbstractString),@
             if k == "building"
             else
            # if k == "highway"
+                
+#                 parse_highway(attr, k, v)
                 if search(v,r"service|living_street|pedestrian|track|bus_guideway|escape|footway|bridleway|steps|path|sidewalk|construction|cycleway|raceway|platform|proposed|road") == 0:-1
                     parse_highway(attr, k, v) # for other highway tags
                 end
