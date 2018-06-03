@@ -4,11 +4,19 @@ import numpy as np
 import mxnet as mx
 import matplotlib.pyplot as plt
 
+def calc_path_weight_sum(G, path):
+    
+    weight_sum = 0.0
+    
+    for idx, node in enumerate(path[:-1]):
+        weight_sum += G.edge[node][path[idx + 1]]['weight']
+        
+    return weight_sum
 
 def plot_g(G, with_labels=True, node_size=300, font_size=8):
     
     pos = {}
-    for t in G.nodes.items():
+    for t in G.node.items():
         pos[t[0]] = (t[1]['x'], t[1]['y'])
 
     nx.draw(G, pos=pos, node_size=node_size, font_size=font_size, with_labels=with_labels)
