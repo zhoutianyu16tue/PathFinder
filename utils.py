@@ -4,6 +4,14 @@ import numpy as np
 import mxnet as mx
 import matplotlib.pyplot as plt
 
+def load_model(prefix, epochs, train_iterator):
+    
+    sym, arg_params, aux_params = mx.model.load_checkpoint(prefix, epochs)
+    model = mx.mod.Module(symbol=sym)
+    model.bind(train_iterator.provide_data, train_iterator.provide_label)
+    model.set_params(arg_params, aux_params)
+    
+    return model
 
 def plot_g(G, with_labels=True, node_size=300, font_size=8):
     
