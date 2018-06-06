@@ -4,10 +4,10 @@ import numpy as np
 import mxnet as mx
 import matplotlib.pyplot as plt
 
-def load_model(prefix, epochs, train_iterator):
+def load_model(prefix, epochs, train_iterator, context):
     
     sym, arg_params, aux_params = mx.model.load_checkpoint(prefix, epochs)
-    model = mx.mod.Module(symbol=sym)
+    model = mx.mod.Module(symbol=sym, context=context)
     model.bind(train_iterator.provide_data, train_iterator.provide_label)
     model.set_params(arg_params, aux_params)
     
