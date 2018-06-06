@@ -6,3 +6,5 @@
 *.txt
 *.osm
 *.csv
+*.log
+*.xml
