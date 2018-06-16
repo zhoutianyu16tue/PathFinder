@@ -6,7 +6,10 @@ Dijkstra's algorithm guarantees to find the optimal paths if exist. However, its
 
 What makes route planning difficult if the dynamic nature of road networks. The road conditions are constantly changing. However, Dijkstra's and A* search algorithm treat a graph as static in order to find the optimal paths. Stated differently, these two algorithms are sensitive to the changes in the graph. To overcome this, the shortest path algorithm can be called everytime the traveler reaches a crossroad, which again has large computational cost.
 
-An algorithm that takes into account the dynamics without sacrificing performance has large practical use.
+An algorithm that takes into account the dynamics without sacrificing performance has large practical use. Deep Learning has been successful in many tasks mainly due to the following facts:  
+* it automatically extracts high-level features from the data;  
+* it can approximate arbitrary functions;  
+* it tractable to be trained on large dataset.
 
 ## Background
 
