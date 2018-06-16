@@ -28,9 +28,17 @@ An example is shown in the following plot:
 In the end, the deep learning model is expected to perform route planning task in real road network. For that, OpenStreetMap is used, as shown in the following image:
 ![](./images/northern_stockholm.png "A plot of the map of Northern Stockholm")
 The graph is abstracted from this area is shown as the following:
-![](./images/road_network_abs.png "A plot of the map of Northern Stockholm")
+->![](./images/road_network_abs.png "A plot of the map of Northern Stockholm")<-  
 ### Algorithm
-The model is trained to make local optimal choices by taking all features of neighboring nodes and edges into consideration.
+The model is trained to make local optimal choices by taking all features of neighboring nodes and edges into consideration. More details can be seen from the source code.
 
 ## Experiments
+Boring numbers will not be presented here. It is more interesting to see how a deep model actually traverses in a graph.
+### Random Graph Traversal
+
+![alt-text-1](./images/12.png "title-1")![alt-text-2](./images/22.png "title-2")  
+![alt-text-1](./images/23.png "title-1")
+![alt-text-2](./images/33.png "title-2")
+
+### Road Network Traversal
 
