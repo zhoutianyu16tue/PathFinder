@@ -1,4 +1,4 @@
-# A Deep Learning Approach for Route Planning in Road Networks
+# Deep Learning Models for Route Planning in Road Networks
 ## Background
 Traditionally, route planning in road networks relies heavily on shortest path algorithms such as Dijkstra's and A* search.
 Dijkstra's algorithm guarantees to find the optimal paths if exist. However, its time complexity, O(E + VlogV) where E and V are the number of edges and nodes respectively, makes it inefficient in large graphs. A* search, as a variation of Dijkstra's, uses heuristics to accelerate, resulting in complexity of Θ(E). The acceleration comes at the prices that:  
